@@ -33,6 +33,7 @@ export default class DetailsScreen extends Component {
 }
 const styles = StyleSheet.create({
   container: {
+    
     flex: 1,
     backgroundColor: 'lightblue',
     margin: 0,
