@@ -66,84 +66,7 @@ export default class FlatListBasics extends Component {
     };
 
     renderItem1 = (item) => {
-      <TouchableOpacity onPress={()=> this.ccc(item)}>
-      <View
-        style={{
-          flexDirection: 'row',
-          width: wp('100%'),
-          height: hp('10%'),
-          borderWidth: 0,
-          borderColor: 'red',
-          marginTop:10,
-        }}>
-
-     <Image source={{uri:item.artworkUrl30}} style={{width:wp('20%'),height:hp('12%')}}/>
-     <View style={{marginLeft:10}}>
-        <Text
-          style={{
-            height: 30,
-            fontWeight: 'bold',
-            borderColor: 'blue',
-            borderWidth: 0,
-            fontSize:20
-          }}>
-          TrackName : {item.trackName}
-        </Text>
-
-        <Text
-          style={{
-            height: 20,
-            fontWeight: 'bold',
-            borderColor: 'blue',
-            borderWidth: 0,fontSize:16
-          }}>
-          TrackCensoredName : {item.trackCensoredName}
-        </Text>
-        
-
-      
-        <Text
-          style={{
-            height: 20,
-            fontWeight: 'bold',
-            borderColor: 'blue',
-            borderWidth: 0,fontSize:16
-          }}>
-          CollectionId : {item.collectionId}
-        </Text>
-
-        <Text
-          style={{
-            height: 20,
-            fontWeight: 'bold',
-            borderColor: 'blue',
-            borderWidth: 0,fontSize:16
-          }}>
-          ArtistId : {item.artistId}
-        </Text>
-        </View>
-        
-      </View>
-      </TouchableOpacity>
-    }
- 
-    render(){
-     return(
-      <View style={{flex:1,width:wp('100%'),height:hp('100%')}}>
-       {this.state.loading ?
-    
-    
-              <Image style={{height: hp('10%'), width: wp('15%'), marginTop: hp('1%'), alignSelf: "center" }} 
-            source={require('../Assets/Rolling.gif')} />:
-            null
-   }
-
-       <FlatList
-          data={this.state.dataSource.results}
-          ItemSeparatorComponent={this.abc}
-          ListHeaderComponent={this.FlatListHeader}
-          renderItem={({item})=> ( 
-            <TouchableOpacity onPress={() => this.ccc(item)}>
+        <TouchableOpacity onPress={() => this.ccc(item)}>
             <View
               style={{
                 flexDirection: 'row',
@@ -151,8 +74,8 @@ export default class FlatListBasics extends Component {
                 height: hp('13%'),
                 borderWidth: 0,
                 borderColor: 'red',
-                marginTop:10,
-                margin:1,
+               // marginTop:10,
+               // margin:1,
               }}>
       
            <Image source={{uri:item.artworkUrl30}} style={{width:wp('20%'),height:hp('12%')}}/>
@@ -203,7 +126,87 @@ export default class FlatListBasics extends Component {
               
             </View>
             </TouchableOpacity>
-          )}
+         
+    }
+ 
+    render(){
+     return(
+      <View style={{flex:1,width:wp('100%'),height:hp('100%')}}>
+       {this.state.loading ?
+    
+    
+              <Image style={{height: hp('10%'), width: wp('15%'), marginTop: hp('1%'), alignSelf: "center" }} 
+            source={require('../Assets/Rolling.gif')} />:
+            null
+   }
+
+       <FlatList
+          data={this.state.dataSource.results}
+          ItemSeparatorComponent={this.abc}
+          ListHeaderComponent={this.FlatListHeader}
+          renderItem={({item}) => //this.renderItem1(item) }
+            <TouchableOpacity onPress={() => this.ccc(item)}>
+          <View
+            style={{
+
+              flexDirection: 'row',
+              width: wp('100%'),
+              height: hp('13%'),
+              borderWidth: 0,
+              borderColor: 'red',
+              marginTop:10,
+              margin:1,
+            }}>
+    
+         <Image source={{uri:item.artworkUrl30}} style={{width:wp('20%'),height:hp('12%')}}/>
+         <View style={{marginLeft:10}}>
+            <Text
+              style={{
+                height: 30,
+                fontWeight: 'bold',
+                borderColor: 'blue',
+                borderWidth: 0,
+                fontSize:20
+              }}>
+              TrackName : {item.trackName}
+            </Text>
+    
+            <Text
+              style={{
+                height: 20,
+                fontWeight: 'bold',
+                borderColor: 'blue',
+                borderWidth: 0,fontSize:16
+              }}>
+              TrackCensoredName : {item.trackCensoredName}
+            </Text>
+            
+    
+          
+            <Text
+              style={{
+                height: 20,
+                fontWeight: 'bold',
+                borderColor: 'blue',
+                borderWidth: 0,fontSize:16
+              }}>
+              CollectionId : {item.collectionId}
+            </Text>
+    
+            <Text
+              style={{
+                height: 20,
+                fontWeight: 'bold',
+                borderColor: 'blue',
+                borderWidth: 0,fontSize:16
+              }}>
+              ArtistId : {item.artistId}
+            </Text>
+            </View>
+            
+          </View>
+          </TouchableOpacity>
+         }
         />
      </View>
      )}

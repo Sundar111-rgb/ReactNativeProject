@@ -1,6 +1,5 @@
 import React, { Component } from 'react';  
- import { Platform, StyleSheet, View, Text,  
- Image, TouchableOpacity, Alert } from 'react-native';  
+ import {  StyleSheet, View, Image } from 'react-native';  
  import App from '../../App';
 import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
  export default class SplashScreen extends Component
